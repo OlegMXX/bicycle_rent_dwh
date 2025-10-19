@@ -81,7 +81,7 @@
   ```bash
   docker cp <container_id>:/var/opt/mssql/backup/master.bak ./
   ```
-  Зайдите в среду выполнения команд контейнера
+  Выполните команду восстановления из бэкапа (команда будет направлена в среду выполнения контейнера автоматически).
 ```bash
 docker exec <container_id> /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P <SA_PASSWORD> -C -Q "RESTORE DATABASE 
 [master] FROM DISK = '/var/opt/mssql/backup/master.bak' WITH REPLACE"
